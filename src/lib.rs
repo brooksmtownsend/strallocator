@@ -1,4 +1,4 @@
-#![feature(integer_atomics, const_fn)]
+#![feature(integer_atomics, const_fn_trait_bound)]
 use std::alloc::{GlobalAlloc, Layout};
 use std::sync::atomic::{AtomicU64, Ordering};
 
