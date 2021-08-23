@@ -1,4 +1,3 @@
-#![feature(integer_atomics, const_fn_trait_bound)]
 use std::alloc::{GlobalAlloc, Layout};
 use std::sync::atomic::{AtomicU64, Ordering};
 
@@ -16,7 +15,7 @@ unsafe impl<A: GlobalAlloc> GlobalAlloc for Trallocator<A> {
 }
 
 impl<A: GlobalAlloc> Trallocator<A> {
-    pub const fn new(a: A) -> Self {
+    pub fn new(a: A) -> Self {
         Trallocator(a, AtomicU64::new(0))
     }
 
